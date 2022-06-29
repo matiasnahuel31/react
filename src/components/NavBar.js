@@ -1,12 +1,10 @@
 import React from "react";
 import logo from './assets/logo.png';
-import ItemListContainer from '../containers/ItemListContainer';
 import CartWidget from './CartWidget/CartWidget';
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 const NavBar = () => {
-    const comprar = () => console.log ('seguir comprando')
     return (
         <header>
             {/* <ShoppingCartIcon/> */}
@@ -18,8 +16,6 @@ const NavBar = () => {
                 <a style={styles.navStyle}href="datos">Datos</a>
                 <CartWidget/>
             </nav>
-            <ItemListContainer  numeroTelefono= '1128054858' comprarEntrada={comprar}/>
-
             
         </header>
     )
