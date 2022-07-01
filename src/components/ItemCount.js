@@ -1,6 +1,8 @@
 //import { AvTimerSharp, VolunteerActivismOutlined } from "@mui/icons-material";
 import React, {useState} from "react";
 import './ItemCount.css';
+import './Item/Item'
+
 
 
 export const ItemCount = ({stock,onAdd,initial=0}) => {
@@ -41,15 +43,17 @@ export const ItemCount = ({stock,onAdd,initial=0}) => {
 
     return( //en las funciones handerclick y decrease no se agregan los parentesis ya que al ejecutar , inicia diractamente la accion , en cambio asi como esta la llama y se inicia solo cuando se haga clic.
         <>
-            <div class="titulo">Cantidad de entradas</div>
+            {/* <div class="titulo">Cantidad de entradas</div> */}
             <div class="contador">{contador}</div>
             <div class="centradobutton">
             <button onClick={handlerClick}>+</button> 
             <button onClick={decrease}>-</button> 
             <button onClick={() =>{onAdd(contador);}}>Agregar al Carrito</button> 
             </div>
+            
         
         </>
+        
     )
 }
 export default ItemCount
