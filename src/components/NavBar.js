@@ -25,7 +25,7 @@ export default NavBar
 const styles = {
    
     navStyle:{
-        color: '#000',
+        color: 'white',
         textDecoration: 'none',
         display: 'flex',
         justifyContent: 'space-between',
@@ -36,6 +36,7 @@ const styles = {
     Tittle:{
         
         fontSize: '40',
+        color: 'white',
         textAlign: 'center',
     
     },
@@ -44,12 +45,7 @@ const styles = {
         display: 'block',
         margin: 'auto',
         width: '20%',
-
-    },
-    Cart:{
         
-        width: '20%',
-        heigth: '100',
 
     },
 

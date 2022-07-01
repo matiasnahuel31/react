@@ -17,7 +17,7 @@ button {
   }
   
   button:hover {
-    background-color: #1e6a3b;
+    background-color: #631938;
   }
   
  .titulo{
@@ -27,7 +27,7 @@ button {
     font-size: 25px;
     font-family:  sans-serif;
     font-weight: bold;
-    color: rgb(97, 95, 95);
+    color:white;
  }
 
  .contador{
@@ -37,7 +37,7 @@ button {
     font-size: 25px;
     font-family:  sans-serif;
     font-weight: bold;
-    color: rgb(97, 95, 95);
+    color: rgb(255, 255, 255);
  }
 
  .centradobutton{
