@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from "../ItemDetail";
+import ItemCount from '../ItemCount'
 import {useParams} from 'react-router-dom';
 
 const products = [
@@ -30,12 +31,17 @@ export const ItemDetailContainer = () => {
     }, [detalleId]);
 
     //console.log(product);
+    const onAdd = (mensaje) => {
+    console.log(mensaje)}
     return (
+
         <div>
+            
             {
             (
                 <>
                     <ItemDetail data={data} />
+                    <ItemCount stock={10} onAdd={onAdd} />
                 </>
             )}
         </div>
