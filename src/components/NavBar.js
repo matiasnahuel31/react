@@ -2,6 +2,7 @@ import React from "react";
 import logo from './assets/logo.png';
 import CartWidget from './CartWidget/CartWidget';
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {NavLink} from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -11,9 +12,9 @@ const NavBar = () => {
             <img style={styles.imagen} src={logo} alt="" />
             <h1 style={styles.Tittle}>Elijo creer - Qatar 2022</h1>
             <nav style={styles.navStyle}>
-                <a style={styles.navStyle}href="inicio">Inicio</a>
-                <a style={styles.navStyle}href="simulador">Simulador</a>
-                <a style={styles.navStyle}href="datos">Datos</a>
+                <NavLink style={styles.navStyle} to = '/'>Inicio</NavLink>
+                <NavLink style={styles.navStyle} to = '/partidos/argentina'>Partidos Argentina</NavLink>
+                <NavLink style={styles.navStyle} to = '/partidos/otros'>Partidos Otros</NavLink>
                 <CartWidget/>
             </nav>
             

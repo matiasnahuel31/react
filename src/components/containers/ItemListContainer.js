@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from '../ItemList/ItemList'
 import { getData } from '../../mocks/fakeApi'
+import {useParams} from 'react-router-dom';
+const products = [
+  {id:'01', name:'Partido 1', partidos: 'argentina', description:"ARGENTINA VS MEXICO", img:'https://i.postimg.cc/NFscp4J2/argvmex.png', stock:5},
+  {id:'02', name:'Partido 2', partidos: 'argentina',description:"ARGENTINA VS ARABIA SAUDITA", img:'https://i.postimg.cc/mkfwspfh/argvarb.png', stock:15},
+  {id:'03', name:'Partido 3', partidos: 'otros',description:"ESTADOS UNIDOS VS INGLATERRA", img:'https://i.postimg.cc/FRN9fN44/estvingl.png', stock:7},
+];
 
-const Datos = ({greeting}) => {
+export const ItemListContainer = ({greeting}) => {
   const [productList, setProductList]=useState([])
   const [loading, setLoading]=useState(true)
+  const {partidoId} = useParams();
     const getProducts = async () => {
       try{
         const respuesta = await getData
@@ -17,8 +24,25 @@ const Datos = ({greeting}) => {
     }
 
     useEffect(()=>{
+      const getData = new Promise ((resolve, reject) =>{
+        //acciones
+        let condition = true
+        setTimeout(()=>{
+          if(condition){
+            resolve(products)
+          }else{
+            reject('salio mal :(')
+          }
+        },1000)
+      });
+      
+      if(partidoId){
+        getData.then(res => setProductList(res.filter(product => product.partidos === partidoId)) );
+      }else{
+        getData.then(res => setProductList(res) );
+      }
       getProducts()
-    },[])
+    },[partidoId])
   
   return (
     <div>
@@ -29,4 +53,4 @@ const Datos = ({greeting}) => {
   )
 }
 
-export default Datos
+export default ItemListContainer
