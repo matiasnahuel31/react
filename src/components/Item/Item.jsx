@@ -1,7 +1,7 @@
 import React from 'react'
-import {ItemCount} from '../ItemCount'
+//import {ItemCount} from '../ItemCount'
 import {Link} from 'react-router-dom';
-import { Info } from '@mui/icons-material';
+//import { Info } from '@mui/icons-material';
 
 const Item = ({product}) => {
   console.log(product)
