@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from "../ItemDetail";
-import ItemCount from '../ItemCount'
+import { getData } from '../../mocks/fakeApi'
 import {useParams} from 'react-router-dom';
 
 const products = [
@@ -11,7 +11,20 @@ const products = [
 
 export const ItemDetailContainer = () => {
     const [data, setData] = useState({});
+    const [loading, setLoading]=useState(true)
     const { detalleId } = useParams();
+
+
+    const getProducts = async () => {
+      try{
+        const respuesta = await getData
+        setData(respuesta)
+      }catch(error){
+        console.log(error)
+      }finally{
+        setLoading(false)
+      }
+    }
 
     useEffect(()=>{
         const getData = new Promise ((resolve, reject) =>{
@@ -24,25 +37,31 @@ export const ItemDetailContainer = () => {
               reject('salio mal :(')
             }
           },1000)
-        });
+
+        })
         
-        getData.then(res => setData(res.find(product => product.id === parseInt(detalleId))) );
+        getProducts();
+        
+        getData.then(res => setData(res.find(product => product.id === detalleId)) );
 
     }, [detalleId]);
 
     //console.log(product);
-    const onAdd = (mensaje) => {
-    console.log(mensaje)}
     return (
 
         <div>
             
             {
             (
-                <>
-                    <ItemDetail data={data} />
-                    <ItemCount stock={10} onAdd={onAdd} />
-                </>
+              <div>
+              {loading ? (
+                  <h2>Cargando...</h2>
+              ) : (
+                  <div style={{display:'flex',justifyContent:'center'}}>
+                      <ItemDetail data={data} />
+                  </div>
+              )}
+          </div>
             )}
         </div>
     );
