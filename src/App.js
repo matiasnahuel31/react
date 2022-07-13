@@ -2,6 +2,7 @@ import React from "react"
 import NavBar from './components/NavBar'
 //import ItemListContainer from './components/containers/ItemListContainer'
 import './App.css';
+import Cart from './components/Cart/Cart'
 // import {ItemCount} from "./components/ItemCount"
 import ItemListContainer from "./components/containers/ItemListContainer";
 //import ItemDetail from "./components/ItemDetail";
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element = {<ItemListContainer/>}/>
         <Route path='/partidos/:partidoId' element = {<ItemListContainer/>}/>
         <Route path='/detalle/:detalleId' element = {<ItemDetailContainer/>}/>
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       {/* <ItemListContainer numeroTelefono= '11-3245-1345' /> */}
     </BrowserRouter>

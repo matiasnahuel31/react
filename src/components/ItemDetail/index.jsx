@@ -1,8 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
 import ItemCount from '../ItemCount'
+import {Link} from 'react-router-dom'
 export const ItemDetail = ({data}) =>{
     const onAdd = (mensaje) => {
-    console.log(mensaje)}
+        setGoToCart(true);
+    }
+    const [goToCart, setGoToCart] = useState(false);
     return(
         <div className="container">
         <div className="detail">
@@ -14,7 +18,14 @@ export const ItemDetail = ({data}) =>{
             <h2>{data.description}</h2>
         </div>
         </div>
-        <ItemCount stock={10} onAdd={onAdd} />
+        {   
+            goToCart
+                ? <Link to = '/cart'>Terminar Compra</Link>
+                : <ItemCount stock={10} onAdd={onAdd} />
+
+        }
+
+
         </div>
         
 
