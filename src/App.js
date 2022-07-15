@@ -8,20 +8,22 @@ import ItemListContainer from "./components/containers/ItemListContainer";
 //import ItemDetail from "./components/ItemDetail";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import CartProvider from './cartContext/CartContext';
 
 function App() {
 
   return (
     <>
     <BrowserRouter>
-      <NavBar />
+      <CartProvider>
+      <NavBar/>
       <Routes>
         <Route path='/' element = {<ItemListContainer/>}/>
         <Route path='/partidos/:partidoId' element = {<ItemListContainer/>}/>
         <Route path='/detalle/:detalleId' element = {<ItemDetailContainer/>}/>
-        <Route path="/cart" element={<Cart />} />
+        <Route path='/cart' element={<Cart />} />
       </Routes>
-      {/* <ItemListContainer numeroTelefono= '11-3245-1345' /> */}
+      </CartProvider>
     </BrowserRouter>
     </>
   );
