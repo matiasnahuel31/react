@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from '../Item/Item'
+import './itemList.css';
 
 const ItemList = ({productList}) => {
     // const {productList}=props
@@ -9,7 +10,7 @@ const ItemList = ({productList}) => {
         <h3>Entradas mas solicitadas</h3>
         </div>
 
-        <div style={{display:'flex',color: 'white', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap'}}>
+        <div className='ordena' style={{display:'flex',color: 'white', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap'}}>
         {productList.map((product)=><Item key={product.id} product={product}/>)}
         </div>
     </div>

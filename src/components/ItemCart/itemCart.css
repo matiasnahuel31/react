@@ -1,0 +1,14 @@
+.itemCart{
+    display: flex;
+    border-bottom: 1px solid gray;
+    max-width: 500px;
+    margin: 1rem auto;
+    color: white;
+}
+
+.itemCart img{
+    width: 400px;
+    height: 120px;
+    margin-right: 1rem;
+
+}

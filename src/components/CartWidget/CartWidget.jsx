@@ -1,25 +1,27 @@
 import React from "react";
-import Cart from "../assets/carrito.png";
+// import Cart from "../assets/carrito.png";
+import { useCartContext } from "../../cartContext/CartContext";
 
 const CartWidget = () => {
-
+    const {totalProducts} = useCartContext();
     return (
-        <div>
-           < img src={Cart} style={styles.Cart} alt="shopping cart" />
-        </div>
+        <>
+          <i className="bi bi-cart3"></i>
+           <span>{totalProducts() || ''}</span>
+        </>
     )
 }
 
-export default CartWidget
+export default CartWidget;
 
-const styles = {
+// const styles = {
    
-    Cart:{
+//     Cart:{
         
-        width: '5%',
-        height: '5%',
+//         width: '5%',
+//         height: '5%',
 
-    },
+//     },
 
     
-}
+// }
