@@ -1,5 +1,4 @@
 import React from "react";
-// import Cart from "../assets/carrito.png";
 import { useCartContext } from "../../cartContext/CartContext";
 
 const CartWidget = () => {
@@ -13,15 +12,3 @@ const CartWidget = () => {
 }
 
 export default CartWidget;
-
-// const styles = {
-   
-//     Cart:{
-        
-//         width: '5%',
-//         height: '5%',
-
-//     },
-
-    
-// }

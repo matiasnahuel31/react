@@ -1,0 +1,94 @@
+@font-face {
+    font-family: estedad;
+    src: url(../assets/fuentes/Estedad[wght\,kshd].ttf);
+  }
+.centrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centrar p {
+    color: white;
+    font-size: 20px;
+    font-family: estedad;
+}
+
+.buyer {
+    display: flex;
+    flex-direction: column;
+}
+
+.precio {
+    font-family: estedad;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    margin: 1rem 0;
+    color: white;
+}
+
+
+.buyer button {
+    margin-bottom: 2rem;
+}
+
+.buyer .datos {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: estedad;
+    letter-spacing: 1.5px;
+    
+}
+
+.buyer .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.border{
+    border-top: 5px solid rgb(215, 215, 215);
+    width: 100%;
+}
+.buyer input {
+    font-size: 10px;
+    margin: .5rem;
+    text-align: center;
+    border: 1px white;
+    border-radius: 5px;
+    font-family: estedad;
+}
+
+
+.button2{
+    margin-top: 40px;
+}
+
+@media (min-width: 368px) {
+    .buyer {
+        margin: 2rem 0;
+    }
+
+    .buyer form input {
+
+        font-size: 25px;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+    .buyer {
+        margin: 0;
+    }
+    .buyer .datos {
+        font-size: 25px;
+    }
+
+    .buyer form input {
+
+        width: 20vw;
+        font-size: 20px;
+    }
+}

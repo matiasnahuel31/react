@@ -1,0 +1,45 @@
+*{
+    list-style: none;
+    text-decoration: none
+}
+.ordenarTodo{
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 84.5%;
+    margin-bottom: 80px;
+
+}
+
+.btn{
+    border: 1px solid white;
+}
+
+.ordenarTodo .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.card-body p{
+    font-family: estedad;
+}
+
+@media(min-width: 1024px) and (max-width: 1200px) {
+    .ordenarTodo{
+        width:82%;
+    }
+}
+@media(max-width: 1024px){
+    .ordenarTodo{
+        width: 96.7%;
+    }
+}

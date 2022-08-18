@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import ItemCount from '../ItemCount'
+import ItemCount from '../ItemCount';
+import './itemDetail.css';
 import {Link} from 'react-router-dom'
 import { useCartContext } from '../../cartContext/CartContext';
 export const ItemDetail = ({data}) =>{
@@ -18,25 +19,22 @@ export const ItemDetail = ({data}) =>{
         <div className="container">
         <div className="detail">
             <img className='detail__image' src={data.img} alt=""/>
-        <div className="content" style={{color: 'white',display:'flex',justifyContent:'center'}}>
-            <h1>{data.name}</h1>
-        </div>
-        <div style={{color: 'white',display:'flex',justifyContent:'center'}}>
-            <h2>{data.description}</h2>
+        <div className="content">
+            <h1>{data.description}</h1>
+            <h2>{data.name}</h2>
+            <h3>Precio ${data.price}</h3>
+            <h3>Fecha: {data.date}</h3>
+            <h3>Estadio: {data.estadio}</h3>
         </div>
         </div>
         {   
             goToCart
-                ? <Link to = '/cart'>Terminar Compra</Link>
-                : <ItemCount stock={10} onAdd={onAdd} />
-
+                ? <div className='centrar'><Link to = '/cart'><button>Terminar Compra</button></Link></div>
+                : <ItemCount onAdd={onAdd} />
         }
 
-
         </div>
-        
-
-
+    
     );
 }
 

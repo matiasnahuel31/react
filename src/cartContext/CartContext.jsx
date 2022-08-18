@@ -19,8 +19,6 @@ const CartProvider = ({children}) => {
         }
     }
 
-    console.log('carrito: ',cart);
-
     const totalPrice = () => {
         return cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
     }
@@ -29,7 +27,7 @@ const CartProvider = ({children}) => {
 
     const clearCart = () => setCart([]);
     const isInCart = (id) => cart.find(producto => producto.id === id) ? true : false;
-    const removeProduct = (id) => setCart([cart.filter(producto => producto.id !== id)]);
+    const removeProduct = (id) => setCart(cart.filter(producto => producto.id !== id));
 
     return(
 

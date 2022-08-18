@@ -1,9 +1,15 @@
 .itemCart{
     display: flex;
-    border-bottom: 1px solid gray;
+    border-bottom: 2px solid rgb(254, 254, 254);
+    
     max-width: 500px;
     margin: 1rem auto;
     color: white;
+    
+}
+
+.bajar{
+    margin-bottom: 25px;
 }
 
 .itemCart img{
@@ -11,4 +17,8 @@
     height: 120px;
     margin-right: 1rem;
 
+}
+
+.itemCart p{
+    font-family: estedad;
 }

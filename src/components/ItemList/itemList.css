@@ -1,4 +1,50 @@
 .ordena{
-    margin: 40px;
+    color: white;
+    margin: auto;
+    width: 100%;
+    align-content: space-between;
+    justify-content: center;
     align-items: center;
+}
+
+.titu{
+    font-family: estedad;
+    letter-spacing: 1.3px;
+    font-size: 30px;
+}
+
+.grid .ordena{
+    display: grid;
+    padding-left: 30px;
+    padding-top: 40px;
+}
+
+@media(min-width: 728px) {
+    .grid .ordena{
+        grid-template-columns: repeat(2.50%);
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1199px) {
+    .grid .ordena{
+        grid-template-columns: repeat(2,40%);
+        padding-left: 50px;
+       
+    }
+    .ordena{
+        width: 1024px;
+        
+    }
+ 
+}
+
+@media(min-width: 1200px) {
+
+    .grid .ordena{
+        grid-template-columns: repeat(3,33%);
+    }
+
+    .ordena{
+        width: 1200px;
+    }
 }
